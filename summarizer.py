@@ -6,7 +6,7 @@ from transformers import pipeline
 @st.cache(allow_output_mutation=True)
 
 def main():
-    sum = pipeline('summarization')
+    sum = pipeline('summarization', device=0)
     text = st.text_input("Text").split()
     st.write(text)
     min = st.select_slider("Pick a min size", 0,300,1)
