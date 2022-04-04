@@ -7,7 +7,8 @@ from transformers import pipeline
 
 def main():
     sum = pipeline('summarization')
-    text = st.text_input("Text")
+    text = st.text_input("Text").split()
+    st.write(text)
     min = st.select_slider("Pick a min size", 0,300,1)
     max = st.select_slider("Pick a max size", 0,300,1)
     do_sample = st.radio("do_sample", ('False', 'True'))
