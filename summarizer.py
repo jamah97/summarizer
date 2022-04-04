@@ -1,9 +1,9 @@
-#!pip install transformers==2.8.0
-#!pip install torch==1.4.0
+
 
 import streamlit as st
 from transformers import pipeline
 
+@st.cache(allow_output_mutation=True)
 
 def main():
     sum = pipeline('summarization')
